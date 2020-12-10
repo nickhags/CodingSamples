@@ -17,7 +17,7 @@ import sys
 import numpy as np
 from numpy.fft import fft
 
-def readFile(fname, fcol):
+def read_file(fname, fcol):
     """ReadFile takes a filename and column number and returns a dict object
         of the column data for each column."""
     infile = open(fname, 'r')
@@ -61,7 +61,7 @@ if len(sys.argv) < 4:
     sys.exit()
 
 # returns dictionary of np.arrays by column index (1-based)
-datafile = readFile(sys.argv[1], int(sys.argv[2]))
+datafile = read_file(sys.argv[1], int(sys.argv[2]))
 
 N = len(datafile[1])
 step = float(sys.argv[3])
