@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 ################################################################################
 ## This script is a more-automated Python version of the C++ program

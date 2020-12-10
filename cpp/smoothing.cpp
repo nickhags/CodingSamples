@@ -84,7 +84,8 @@ void smooth(std::vector< std::vector<double> >& data, int factor, int col) {
   // store column-smoothed point
   std::vector<double> smoothed;
   // begin for-loop for each point
-  for (int i = 0; i < data.size(); i++) {
+  const int datasize = data.size();
+  for (int i = 0; i < datasize; i++) {
     sum = 0;
     count = 0;
     // sum entries pulled from before entry i
@@ -95,7 +96,7 @@ void smooth(std::vector< std::vector<double> >& data, int factor, int col) {
     sum += data[i][col];
     count++;
     // sum entries pulled from after entry i
-    for (int front = i + 1; front < data.size() && (front - i) < move;
+    for (int front = i + 1; front < datasize && (front - i) < move;
           front++) {
       sum += data[front][col];
       count++;
@@ -106,7 +107,8 @@ void smooth(std::vector< std::vector<double> >& data, int factor, int col) {
     smoothed.push_back(sd);
   }
   // copy over smoothed data
-  for (int j = 0; j < smoothed.size(); j++) {
+  int smoothedsize = smoothed.size();
+  for (int j = 0; j < smoothedsize; j++) {
     data[j][col] = smoothed[j];
   }
 }
@@ -120,8 +122,8 @@ void smooth(std::vector< std::vector<double> >& data, int factor, int col) {
  * Returns: None
  */
 void printResult(std::vector<std::vector<double>>& data) {
-  for (int i = 0; i < data.size(); i++) {
-    for (int j = 0; j < data[i].size(); j++) {
+  for (unsigned int i = 0; i < data.size(); i++) {
+    for (unsigned int j = 0; j < data[i].size(); j++) {
       std::cout << data[i][j] << " ";
     }
     std::cout << std::endl;

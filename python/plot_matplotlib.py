@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 ################################################################################
 ## This script is a command-line tool to easily access Matplotlib from
